@@ -41,7 +41,7 @@ Track: {{$trak.Tkhd.TrackID}}
     duration:       {{getDurationMS $trak.Mdia.Mdhd.Duration $trak.Mdia.Mdhd.Timescale}} (ms)
   {{- if (or (ne $trak.Tkhd.GetWidth 0) (ne $trak.Tkhd.GetHeight 0)) }}
     display width:  {{$trak.Tkhd.GetWidth}}
-    display width:  {{$trak.Tkhd.GetHeight}}
+    display height:  {{$trak.Tkhd.GetHeight}}
   {{- end}}
   {{- if (eq (getHandlerType $trak.Mdia.Hdlr.Handler) "Video")}}
     frame rate (computed): {{getFramerate $trak.Mdia.Minf.Stbl.Stts.SampleCounts $trak.Mdia.Mdhd.Duration $trak.Mdia.Mdhd.Timescale}}
